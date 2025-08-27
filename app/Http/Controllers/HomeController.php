@@ -33,8 +33,25 @@ class HomeController extends Controller
 
         try {
             // Make request to Python API
-            $response = Http::timeout(300) // 5 minutes timeout for long downloads
-                ->withHeaders(['X-API-Key' => env('API_KEY')])
+            $response = Http::timeout(300)
+                ->connectTimeout(30) // 30 seconds connection timeout
+                ->retry(2, 1000) // Retry 2 times with 1 second delay
+                ->withHeaders([
+                    'X-API-Key' => env('API_KEY'),
+                    'Content-Type' => 'application/json',
+                    'Accept' => 'application/json'
+                ])
+                ->post(env('PYTHON_API_URL', 'http://localhost:5001/api/convert'), [
+                    'url' => $request->url
+                ]);
+            $response = Http::timeout(300)
+                ->connectTimeout(30) // 30 seconds connection timeout
+                ->retry(2, 1000) // Retry 2 times with 1 second delay
+                ->withHeaders([
+                    'X-API-Key' => env('API_KEY'),
+                    'Content-Type' => 'application/json',
+                    'Accept' => 'application/json'
+                ])
                 ->post(env('PYTHON_API_URL', 'http://localhost:5001/api/convert'), [
                     'url' => $request->url
                 ]);
@@ -57,7 +74,9 @@ class HomeController extends Controller
             } else {
                 Log::error('Python API error', [
                     'status' => $response->status(),
-                    'body' => $response->body()
+                    'body' => $response->body(),
+                    'url' => env('PYTHON_API_URL'),
+                    'headers' => $response->headers()
                 ]);
 
                 return response()->json([
