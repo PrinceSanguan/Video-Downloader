@@ -1,0 +1,168 @@
+{
+  "_button-DCkYd9LR.js": {
+    "file": "assets/button-DCkYd9LR.js",
+    "name": "button",
+    "imports": [
+      "resources/js/app.tsx"
+    ]
+  },
+  "_card-Bse7Hsbt.js": {
+    "file": "assets/card-Bse7Hsbt.js",
+    "name": "card",
+    "imports": [
+      "resources/js/app.tsx",
+      "_button-DCkYd9LR.js"
+    ]
+  },
+  "_circle-check-big-ClePcVdL.js": {
+    "file": "assets/circle-check-big-ClePcVdL.js",
+    "name": "circle-check-big",
+    "imports": [
+      "_createLucideIcon-DWeMUH-t.js"
+    ]
+  },
+  "_createLucideIcon-DWeMUH-t.js": {
+    "file": "assets/createLucideIcon-DWeMUH-t.js",
+    "name": "createLucideIcon",
+    "imports": [
+      "resources/js/app.tsx",
+      "_button-DCkYd9LR.js"
+    ]
+  },
+  "_input-CPat1OnA.js": {
+    "file": "assets/input-CPat1OnA.js",
+    "name": "input",
+    "imports": [
+      "resources/js/app.tsx",
+      "_button-DCkYd9LR.js"
+    ]
+  },
+  "_label-DfXBM4sL.js": {
+    "file": "assets/label-DfXBM4sL.js",
+    "name": "label",
+    "imports": [
+      "resources/js/app.tsx",
+      "_button-DCkYd9LR.js"
+    ]
+  },
+  "_separator-BxJpROlY.js": {
+    "file": "assets/separator-BxJpROlY.js",
+    "name": "separator",
+    "imports": [
+      "resources/js/app.tsx",
+      "_createLucideIcon-DWeMUH-t.js",
+      "_button-DCkYd9LR.js"
+    ]
+  },
+  "_sidebar-DxlP0WeG.js": {
+    "file": "assets/sidebar-DxlP0WeG.js",
+    "name": "sidebar",
+    "imports": [
+      "resources/js/app.tsx",
+      "_separator-BxJpROlY.js",
+      "_button-DCkYd9LR.js"
+    ]
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-CcOl3YfC.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/js/app.tsx": {
+    "file": "assets/app-DQGf1ej3.js",
+    "name": "app",
+    "src": "resources/js/app.tsx",
+    "isEntry": true,
+    "dynamicImports": [
+      "resources/js/pages/Admin/Dashboard.tsx",
+      "resources/js/pages/Admin/Settings.tsx",
+      "resources/js/pages/Auth/Login.tsx",
+      "resources/js/pages/Auth/Register.tsx",
+      "resources/js/pages/User/Dashboard.tsx",
+      "resources/js/pages/Welcome.tsx"
+    ],
+    "css": [
+      "assets/app-CcOl3YfC.css"
+    ]
+  },
+  "resources/js/pages/Admin/Dashboard.tsx": {
+    "file": "assets/Dashboard-B0lPKH2e.js",
+    "name": "Dashboard",
+    "src": "resources/js/pages/Admin/Dashboard.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_sidebar-DxlP0WeG.js",
+      "_separator-BxJpROlY.js",
+      "_createLucideIcon-DWeMUH-t.js",
+      "_button-DCkYd9LR.js"
+    ]
+  },
+  "resources/js/pages/Admin/Settings.tsx": {
+    "file": "assets/Settings-D9tIs74W.js",
+    "name": "Settings",
+    "src": "resources/js/pages/Admin/Settings.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_sidebar-DxlP0WeG.js",
+      "_card-Bse7Hsbt.js",
+      "_button-DCkYd9LR.js",
+      "_input-CPat1OnA.js",
+      "_label-DfXBM4sL.js",
+      "_createLucideIcon-DWeMUH-t.js",
+      "_separator-BxJpROlY.js",
+      "_circle-check-big-ClePcVdL.js"
+    ]
+  },
+  "resources/js/pages/Auth/Login.tsx": {
+    "file": "assets/Login-2921Yldc.js",
+    "name": "Login",
+    "src": "resources/js/pages/Auth/Login.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_card-Bse7Hsbt.js",
+      "_button-DCkYd9LR.js",
+      "_input-CPat1OnA.js",
+      "_label-DfXBM4sL.js"
+    ]
+  },
+  "resources/js/pages/Auth/Register.tsx": {
+    "file": "assets/Register-Bc2_Jng1.js",
+    "name": "Register",
+    "src": "resources/js/pages/Auth/Register.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_button-DCkYd9LR.js",
+      "_input-CPat1OnA.js",
+      "_label-DfXBM4sL.js"
+    ]
+  },
+  "resources/js/pages/User/Dashboard.tsx": {
+    "file": "assets/Dashboard-lIx8Pk8r.js",
+    "name": "Dashboard",
+    "src": "resources/js/pages/User/Dashboard.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_separator-BxJpROlY.js",
+      "_button-DCkYd9LR.js",
+      "_createLucideIcon-DWeMUH-t.js"
+    ]
+  },
+  "resources/js/pages/Welcome.tsx": {
+    "file": "assets/Welcome-qemzmd_6.js",
+    "name": "Welcome",
+    "src": "resources/js/pages/Welcome.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_button-DCkYd9LR.js",
+      "_createLucideIcon-DWeMUH-t.js",
+      "_input-CPat1OnA.js",
+      "_circle-check-big-ClePcVdL.js"
+    ]
+  }
+}
