@@ -34,7 +34,8 @@ class HomeController extends Controller
         try {
             // Make request to Python API
             $response = Http::timeout(300) // 5 minutes timeout for long downloads
-                ->post('http://localhost:5001/api/convert', [
+                ->withHeaders(['X-API-Key' => env('API_KEY')])
+                ->post(env('PYTHON_API_URL', 'http://localhost:5001/api/convert'), [
                     'url' => $request->url
                 ]);
 
