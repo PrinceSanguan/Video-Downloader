@@ -171,27 +171,17 @@ export default function Welcome() {
                 setErrorMessage(result.message || 'Too many requests. Please try again tomorrow.');
                 setPendingDownload(null); // Clear any pending download
             } else if (result.success) {
-                // Store the download data but don't trigger download yet
+                // Immediately trigger the download when API responds
                 if (result.data && result.data.file_data) {
-                    setPendingDownload({
-                        data: result.data.file_data,
-                        filename: result.data.filename,
-                    });
+                    downloadFile(result.data.file_data, result.data.filename);
                 }
 
-                // Wait for loader to complete (duration * steps = total time)
-                // Each step takes 2000ms, total steps = 7, so about 14 seconds
+                // Keep loader running for better UX (3 seconds)
                 setTimeout(() => {
                     setIsLoading(false);
                     setShowSuccess(true);
 
-                    // Now trigger the download
-                    if (pendingDownload || (result.data && result.data.file_data)) {
-                        const downloadData = pendingDownload || result.data;
-                        downloadFile(downloadData.file_data || downloadData.data, downloadData.filename);
-                    }
-
-                    // Close modal and reset form after successful download
+                    // Close modal and reset form after showing success
                     setTimeout(() => {
                         setIsModalOpen(false);
                         setYoutubeUrl('');
@@ -200,7 +190,7 @@ export default function Welcome() {
                         setHasClickedImage(false);
                         setPendingDownload(null);
                     }, 3000);
-                }, 14000); // Wait for loader to complete (14 seconds)
+                }, 3000); // Keep loader for 3 seconds for better UX
             } else {
                 setIsLoading(false);
                 setErrorMessage(result.message || 'Download failed. Please try again.');
